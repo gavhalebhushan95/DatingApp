@@ -22,10 +22,8 @@ namespace API.Extensions
         {
             services.AddSingleton<PresenceTracker>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPhotoService, PhotoService>();
-            services.AddScoped<ILikesRepository, LikesRepository>();
-            services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<LogUserActivity>();
             
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
